@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Dashboard.scss";
+import "../../sass/Dashboard.scss";
 import { useCreateProductMutation } from "../context/getRequest";
 
 function CreateProduct({

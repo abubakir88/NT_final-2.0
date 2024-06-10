@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Header.css";
+import "../../sass/Header.scss";
 import logo from "../../assets/logo.svg";
 import { IoIosSearch, IoMdList } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa";

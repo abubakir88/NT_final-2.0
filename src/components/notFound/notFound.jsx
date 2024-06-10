@@ -1,7 +1,7 @@
 import React from "react";
-import "./Error.css";
+import "../../sass/notFound.scss";
 import { useNavigate } from "react-router-dom";
-function Error() {
+function Notfound() {
   let navigate = useNavigate();
   return (
     <div className="error">
@@ -21,4 +21,4 @@ function Error() {
   );
 }
 
-export default Error;
+export default Notfound;

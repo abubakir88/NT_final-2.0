@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "./Hero.scss";
+import React from "react";
+import "../../sass/Hero.scss";
 import banner1 from "../../assets/banner1.png";
 function Hero() {
   return (

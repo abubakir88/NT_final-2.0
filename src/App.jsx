@@ -1,6 +1,5 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
-import "./App.scss";
-// import "./i18n";
+import "./sass/App.scss";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Main from "./components/main/Main";
@@ -15,7 +14,7 @@ import Garant from "./pages/garant/Garant";
 import Contact from "./pages/contact/Contact";
 import Blog from "./pages/blog/Blog";
 import Wishlist from "./pages/wishlist/Wishlist";
-import Error from "./components/notFound/Error";
+import Notfound from "./components/notFound/notFound";
 import Loading from "./components/loading/Loading";
 import Cart from "./pages/cart/Cart";
 import Dashboard from "./components/adminpanel/Dashboard";
@@ -33,10 +32,6 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [night, setNight] = useState(JSON.parse(localStorage.getItem("mode")));
-  // let locitem = localStorage.getItem("i18nextLng");
-  // if (locitem === "ru-UZ") {
-  //   localStorage.setItem("i18nextLng", "ru");
-  // }
   const fetchdata = async () => {
     setLoading(true);
     try {
@@ -175,7 +170,7 @@ function App() {
                 path="/edit/:id"
                 element={<EditProduct product={product} category={category} />}
               />
-              <Route path="*" element={<Error />} />
+              <Route path="*" element={<Notfound />} />
             </Routes>
           ) : (
             <></>

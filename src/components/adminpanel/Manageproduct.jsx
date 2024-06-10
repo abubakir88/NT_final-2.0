@@ -1,4 +1,4 @@
-import "./Dashboard.scss";
+import "../../sass/Dashboard.scss";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { useDeleteProductMutation } from "../context/getRequest";
 import { CiEdit } from "react-icons/ci";

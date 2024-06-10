@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useUpdateProductMutation } from "../context/getRequest";
-import "./Dashboard.scss";
+import "../../sass/Dashboard.scss";
 function EditProduct({ product, category }) {
   let { id } = useParams();
   let opls = product?.find((el) => el.id === id);

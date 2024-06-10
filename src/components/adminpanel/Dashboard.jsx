@@ -1,5 +1,5 @@
 import { TbCategoryPlus } from "react-icons/tb";
-import "./Dashboard.scss";
+import "../../sass/Dashboard.scss";
 import { CiEdit } from "react-icons/ci";
 import { FiLogOut } from "react-icons/fi";
 import { useEffect, useState } from "react";
