@@ -8,8 +8,7 @@ import {
   removeFromCart,
 } from "../../components/context/cartSlice";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { PatternFormat } from "react-number-format";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Cart({ night }) {
   let navigate = useNavigate();
   const [see, setSee] = useState(null);
@@ -57,8 +56,6 @@ function Cart({ night }) {
       </div>
     </li>
   ));
-  let chatId = "-4241654105";
-  let bot_Token = "6361316833:AAGYaAgdy7WfJ4MdZc5Sh73iqWTZesqqigA";
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -78,29 +75,7 @@ function Cart({ night }) {
     console.log("Unable to retrieve your location");
   }
   let hidencart = cartproducts.slice(0, 3);
-  let dostavka = 580;
-  let forbot = cartitems?.map((item) => item.title + " " + "%0A");
-  const handleOrder = () => {
-    let text = "";
-    text += `F.I.O: ${fio} %0A`;
-    text += `Telefon raqami: ${pnumber} %0A`;
-    text += `Pochta: ${pochta} %0A`;
-    text += `Joylashuvi: ${address} %0A`;
-    text += `Izoh: ${comment} %0A %0A`;
-    text += `Shularni olmoqchi: %0A ${forbot?.join(" ")} %0A`;
-    text += `Jami pull: ${totalPrice} + ${dostavka} = ${
-      totalPrice + dostavka
-    } %0A %0A`;
-    text += `Ip location %0A`;
-    text += `${iplocation}`;
-    let url = `https://api.telegram.org/bot${bot_Token}/sendMessage?chat_id=${chatId}&text=${text}`;
-    let api = new XMLHttpRequest();
-    api.open("GET", url, true);
-    api.send();
-    alert("Buyurtma qabul qilindi tez orada siz bilan bog'lanamiz!");
-    dispatch(clearCart());
-    navigate("/");
-  };
+
   return (
     <div className="cart">
       <div
@@ -145,7 +120,7 @@ function Cart({ night }) {
           <></>
         )}
       </ul>
-      <form action="" onSubmit={handleOrder}>
+      <form action="">
         <div className="rasmiylashtirish">
           <div className="inpvalues">
             <p>Оформление</p>
@@ -159,13 +134,11 @@ function Cart({ night }) {
                 value={fio}
                 onChange={(e) => setFio(e.target.value)}
               />
-              <PatternFormat
+              <input
                 required
-                value={pnumber}
                 onChange={(e) => setPnumber(e.target.value)}
-                onMouseEnter={() => setPnumber(8)}
+                onMouseEnter={() => setPnumber()}
                 placeholder="Телефон"
-                format="+99# (##) ### ## ##"
               />
               <input
                 required
@@ -204,16 +177,12 @@ function Cart({ night }) {
           <div className="oplata">
             <p>Оплата</p>
             <div>
-              <p>
-                Товары.............................................{totalPrice}₽
-              </p>
-              <p>
-                Доставка..........................................{dostavka}₽
-              </p>
+              <p>Товары.............................................12 300₽</p>
+              <p>Доставка..........................................580₽</p>
             </div>
           </div>
           <div className="paymanting">
-            <p>{totalPrice + dostavka}₽</p>
+            <p>12 300₽</p>
             <div>
               <button type="submit">Купить</button>
               <p className="botgo">Botga o'tish</p>
