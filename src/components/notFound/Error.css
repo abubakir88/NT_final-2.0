@@ -1,0 +1,29 @@
+.error{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    p{
+        font-size: 1500%;
+        font-weight: 700;
+        opacity: 0.5;
+    }
+    button{
+        width: 150px;
+        height: 35px;
+        border: none;
+        border-radius: 100px;
+        color: white;
+        background: rgba(69, 69, 69, 1);
+        margin-bottom: 50px;
+    }
+}
+@media screen and (max-width: 550px){
+    .error{
+        p{
+            font-size: 1000%;
+        }
+    }
+}

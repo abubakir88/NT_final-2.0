@@ -1,0 +1,170 @@
+.nightlight {
+  background: #000;
+  * {
+    color: #fff;
+    border-color: #fff;
+  }
+  .footer {
+    border-top: 1px solid;
+    background: #000;
+  }
+  .category {
+    background: rgb(40, 40, 40);
+  }
+  input {
+    color: #000;
+  }
+  button {
+    color: #000;
+    * {
+      color: #000;
+    }
+  }
+  .catalogbtn {
+    color: #fff;
+    * {
+      color: #fff;
+    }
+  }
+  .list {
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    * {
+      color: #000;
+    }
+    .likebtn {
+      * {
+        color: #000;
+      }
+    }
+    button {
+      * {
+        color: #fff;
+      }
+    }
+  }
+  .categories {
+    background: #000;
+  }
+  .lichanger {
+    background: gray;
+  }
+  .mapcontainer {
+    * {
+      color: #000;
+    }
+    button {
+      color: #fff;
+    }
+  }
+  .header {
+    background: #000;
+    button {
+      color: #fff;
+    }
+    .hiderkatalog {
+      background: #000;
+      color: #fff;
+      border-color: #fff;
+      * {
+        color: #fff;
+      }
+    }
+  }
+  .cart {
+    * {
+      color: #fff;
+      background: rgb(49, 49, 49);
+    }
+    .carttitle {
+      background: #000;
+    }
+  }
+  .loadhide {
+    color: #fff;
+  }
+  .absolutecatelog {
+    ul {
+      li {
+        color: #000;
+      }
+    }
+  }
+  .phonenum select {
+    background: #000;
+  }
+  .absolutecatelog select {
+    background: rgb(82, 82, 82);
+  }
+  .hiderkatalog {
+    * {
+      color: #000;
+      background: #000;
+      border-color: #000;
+    }
+  }
+}
+.login {
+  width: 50%;
+  height: 400px;
+  max-width: 1000px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  // z-index: 999999999999999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  //   border: 1px solid gray;
+  border-radius: 15px;
+}
+.loginwrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  p {
+    font-size: 36px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+  }
+  div {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    input {
+      width: 70%;
+      height: 35px;
+      border-radius: 15px;
+      border: 1px solid;
+      padding-left: 10px;
+    }
+  }
+  button {
+    width: 70%;
+    height: 35px;
+    border: none;
+    border-radius: 100px;
+    color: #fff;
+    background: #000;
+  }
+}
+// @media screen and (max-width: 620px) {
+//   .login {
+//     width: 80%;
+//     input {
+//       width: 80%;
+//     }
+//     button {
+//       width: 70%;
+//     }
+//   }
+// }

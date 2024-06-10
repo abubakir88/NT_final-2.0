@@ -1,0 +1,54 @@
+.qaytarish{
+    width: 80%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    align-items: baseline;
+    p{
+        height: 100%;
+        position: sticky;
+        top: 0;
+        width: 50%;
+        font-size: 40px;
+        font-weight: 600;
+        strong{
+            font-size:18px;
+            font-weight: 500;
+        }
+    }
+}
+.malumotnoma{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    p{
+        position: static;
+        width: auto;
+        padding-bottom: 15px;
+        font-size: medium;
+        font-weight: normal;
+    }
+    ul{
+        padding-left:20px;
+        padding-bottom: 15px;
+        li{
+            color: rgb(44, 83, 189);
+            line-height: 25px;
+        }
+    }
+}
+@media screen and (max-width: 500px){
+    .qaytarish{
+        flex-direction: column;
+        p{
+            width: 100%;
+            padding-bottom: 20px;
+        }
+    }
+    .malumotnoma{
+        width: 100%;
+    }
+}

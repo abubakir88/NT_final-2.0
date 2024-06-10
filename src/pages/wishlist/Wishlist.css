@@ -1,0 +1,24 @@
+.wishlist{
+    width: 80%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.listwish{
+    width: 100%;
+    max-width: 280px;
+}
+.wishlists{
+    width: 100%;
+    
+    display: grid;
+}
+.wishsup{
+    left: 360px;
+    top: 10px;
+    font-size: medium;
+}
+@media screen and (max-width: 472px){
+    .wishsup{
+        left: 210px;
+    }
+}
