@@ -20,12 +20,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { togleWishlist } from "../context/wishlistSlice";
 import { FaHeart } from "react-icons/fa";
 import { addToCart } from "../context/cartSlice";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function Main({ category, product }) {
-  let dispatch = useDispatch();
-  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [more, setMore] = useState(null);
-  let wish = useSelector((state) => state.wishlist.value);
-  let categories = category?.map((item) => (
+  const wish = useSelector((state) => state.wishlist.value);
+
+  const handleWishlistToggle = (item) => {
+    dispatch(togleWishlist(item));
+    const isWished = wish.some((w) => w.id === item.id);
+    if (isWished) {
+      toast.info("Removed from like", {
+        position: "top-right",
+      });
+    } else {
+      toast.success("Added to like", {
+        position: "top-right",
+      });
+    }
+  };
+
+  const categories = category?.slice(0, 6).map((item) => (
     <div className="category" key={item.id}>
       <div>
         <h4>{item.title}</h4>
@@ -36,9 +55,10 @@ function Main({ category, product }) {
       <img src={item.image} alt="" />
     </div>
   ));
-  let products = product?.map((item) => (
+
+  const products = product?.map((item) => (
     <li className="list" key={item.id}>
-      <button className="likebtn" onClick={() => dispatch(togleWishlist(item))}>
+      <button className="likebtn" onClick={() => handleWishlistToggle(item)}>
         {wish.some((w) => w.id === item.id) ? (
           <FaHeart size={22} />
         ) : (
@@ -60,13 +80,13 @@ function Main({ category, product }) {
       </div>
     </li>
   ));
-  let categoriestitle = category?.map((item) => (
+
+  const categoriestitle = category?.map((item) => (
     <li className="categorytitle" key={item.id}>
       <p>{item.title}</p>
     </li>
   ));
 
-  categories = categories.slice(0, 6);
   return (
     <main className="main">
       <section className="catalogsection">
@@ -116,7 +136,9 @@ function Main({ category, product }) {
           </button>
         </div>
         <ul className="categories">{categoriestitle}</ul>
-        <ul className="lists">{more ? products : products.slice(0, 8)}</ul>
+        <ul className="lists">
+          {more ? products.slice(0, 14) : products.slice(0, 8)}
+        </ul>
         <button onClick={() => setMore(!more)} className="loadhide">
           {more ? "Hide" : "Load more"}
         </button>
@@ -194,6 +216,7 @@ function Main({ category, product }) {
           </div>
         </div>
       </section>
+      <ToastContainer />
     </main>
   );
 }

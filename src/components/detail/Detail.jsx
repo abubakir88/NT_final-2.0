@@ -60,7 +60,7 @@ function Detail({ product }) {
             хардтейлов для кросс-кантри.
           </p>
           <div className="productbuttons">
-            {productqu ? (
+            {/* {productqu ? (
               <div className="numbercart">
                 <button>-</button>
                 <p>{quantity}</p>
@@ -68,7 +68,7 @@ function Detail({ product }) {
               </div>
             ) : (
               <></>
-            )}
+            )} */}
             <button
               onClick={() => {
                 dispatch(addToCart(productan));

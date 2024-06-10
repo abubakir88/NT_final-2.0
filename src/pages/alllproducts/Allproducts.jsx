@@ -7,16 +7,35 @@ import { useDispatch, useSelector } from "react-redux";
 import { togleWishlist } from "../../components/context/wishlistSlice";
 import { FaHeart } from "react-icons/fa";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function Allproducts({ product }) {
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const wish = useSelector((state) => state.wishlist.value);
+
   useEffect(() => {
-    scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, []);
-  let wish = useSelector((state) => state.wishlist.value);
-  let navigate = useNavigate();
-  let products = product?.map((item) => (
+
+  const handleWishlistToggle = (item) => {
+    dispatch(togleWishlist(item));
+    const isWished = wish.some((w) => w.id === item.id);
+    if (isWished) {
+      toast.info("Removed from wishlist", {
+        position: "top-right",
+      });
+    } else {
+      toast.success("Added to wishlist", {
+        position: "top-right",
+      });
+    }
+  };
+
+  const products = product?.map((item) => (
     <li className="list" key={item.id}>
-      <button className="likebtn" onClick={() => dispatch(togleWishlist(item))}>
+      <button className="likebtn" onClick={() => handleWishlistToggle(item)}>
         {wish.some((w) => w.id === item.id) ? (
           <FaHeart size={22} />
         ) : (
@@ -38,6 +57,7 @@ function Allproducts({ product }) {
       </div>
     </li>
   ));
+
   return (
     <div
       style={{
@@ -48,6 +68,7 @@ function Allproducts({ product }) {
       }}
     >
       <ul className="lists">{products}</ul>
+      <ToastContainer />
     </div>
   );
 }

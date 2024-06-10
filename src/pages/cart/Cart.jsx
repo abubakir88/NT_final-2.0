@@ -216,9 +216,8 @@ function Cart({ night }) {
             <p>{totalPrice + dostavka}₽</p>
             <div>
               <button type="submit">Купить</button>
-              <Link to="https://t.me/+n9zRDa-ygndhM2Ey">
-                <p className="botgo">Botga o'tish</p>
-              </Link>
+              <p className="botgo">Botga o'tish</p>
+
               <p>
                 <input type="radio" name="" id="" /> Я согласен наобработку моих
                 персональных данных
